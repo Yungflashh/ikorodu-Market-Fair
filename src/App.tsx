@@ -15,10 +15,8 @@ import DashboardPage from './pages/DashboardPage';
 import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/RegisterPage';
 import NotFoundPage from './pages/NotFoundPage';
-
 const App: React.FC = () => {
-  return (
-    <Router>
+  return <Router>
       <div className="flex flex-col min-h-screen">
         <Navbar />
         <main className="flex-grow">
@@ -40,8 +38,6 @@ const App: React.FC = () => {
         <Footer />
         <Toaster position="top-right" />
       </div>
-    </Router>
-  );
+    </Router>;
 };
-
 export default App;

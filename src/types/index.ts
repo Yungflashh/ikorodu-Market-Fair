@@ -10,13 +10,11 @@ export interface User {
   createdAt: string;
   updatedAt: string;
 }
-
 export interface AuthResponse {
   success: boolean;
   token: string;
   user: User;
 }
-
 export interface MerchantApplication {
   _id: string;
   userId: string;
@@ -40,7 +38,6 @@ export interface MerchantApplication {
   createdAt: string;
   updatedAt: string;
 }
-
 export interface Sponsor {
   _id: string;
   companyName: string;
@@ -57,7 +54,6 @@ export interface Sponsor {
   createdAt: string;
   updatedAt: string;
 }
-
 export interface Testimonial {
   _id: string;
   name: string;
@@ -69,7 +65,6 @@ export interface Testimonial {
   createdAt: string;
   updatedAt: string;
 }
-
 export interface Contact {
   name: string;
   email: string;
@@ -77,11 +72,9 @@ export interface Contact {
   subject: string;
   message: string;
 }
-
 export interface Newsletter {
   email: string;
 }
-
 export interface ApiResponse<T = any> {
   success: boolean;
   message?: string;
@@ -91,14 +84,12 @@ export interface ApiResponse<T = any> {
   page?: number;
   pages?: number;
 }
-
 export interface BoothPackage {
   name: string;
   price: number;
   features: string[];
   popular?: boolean;
 }
-
 export interface SponsorshipTier {
   name: string;
   tier: 'bronze' | 'silver' | 'gold' | 'platinum';
@@ -106,7 +97,6 @@ export interface SponsorshipTier {
   benefits: string[];
   color: string;
 }
-
 export interface Stat {
   value: string;
   label: string;
