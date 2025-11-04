@@ -354,7 +354,7 @@ const SponsorsPage: React.FC = () => {
       </section>
 
       {}
-      <section className="section-padding bg-gray-50">
+      {/* <section className="section-padding bg-gray-50">
         <div className="container-custom">
           <motion.div initial={{
           opacity: 0,
@@ -375,7 +375,7 @@ const SponsorsPage: React.FC = () => {
               </div>)}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {}
       <section className="section-padding bg-gradient-to-r from-purple-600 to-purple-800 text-white">
