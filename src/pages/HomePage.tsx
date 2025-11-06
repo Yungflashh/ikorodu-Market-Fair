@@ -77,7 +77,7 @@ const HomePage: React.FC = () => {
     title: 'FOR MSME OWNERS',
     icon: Store,
     color: 'from-green-500 to-emerald-600',
-    benefits: ['Reach 10,000+ potential customers', 'Network with other business owners', 'Access free CAC registration support', 'Meet investors and secure funding', 'Get business mentorship from experts', 'Continue selling online after event'],
+    benefits: ['Reach 10,000+ potential customers', 'Network with other business owners', 'Agencies & MSMEs Ecosystem experts.', 'Meet investors and secure funding', 'Get business mentorship from experts', 'Continue selling online after event'],
     cta: 'Apply as Merchant',
     link: '/merchants'
   }, {
@@ -158,7 +158,7 @@ const HomePage: React.FC = () => {
     sales: '₦650,000 + Investor deal',
     rating: 5
   }];
-  const partners = ['Talent Plus Resources International', 'Lagos State MSME Office', 'Ikorodu Local Government', 'Nigerian Export Promotion Council'];
+  const partners = ['Talent Plus Resources International', 'Ikorodu Local Government', 'Nigerian Export Promotion Council'];
   return <div className="min-h-screen">
     { }
     <section
@@ -230,7 +230,8 @@ const HomePage: React.FC = () => {
                 <MapPin className="text-yellow-400" size={32} />
                 <div>
                   <div className="text-sm text-green-200">Venue</div>
-                  <div className="text-lg font-semibold">79 LIFE Theological Seminary, Obafemi Awolowo Road, Ikorodu</div>
+                  <div className="text-lg font-semibold">LIFE Theological Seminary Premises
+                    79, Obafemi Awolowo Road,Oke Ota-ona by Grammar Bus stop</div>
                 </div>
               </div>
             </div>
@@ -269,7 +270,7 @@ const HomePage: React.FC = () => {
                 </Button>
               </Link>
               <Link to="/event">
-                <Button size="lg" variant="secondary" className="border-2 border-white bg-transparent hover:bg-white/10 font-bold text-lg px-8">
+                <Button size="lg" className="border-2 border-white bg-transparent hover:bg-white/10 font-bold text-lg px-8">
                   <Calendar className="mr-2" size={24} />
                   View Full Schedule
                 </Button>
@@ -361,7 +362,7 @@ const HomePage: React.FC = () => {
             We're not just a market fair – we're a movement to ease economic burden and create opportunities for everyone
           </p>
         </motion.div>
-        
+
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {whyPricesCrash.map((reason, index) => <motion.div key={index} initial={{
@@ -383,7 +384,7 @@ const HomePage: React.FC = () => {
           </motion.div>)}
         </div>
 
-        
+
       </div>
     </section>
 
@@ -471,9 +472,9 @@ const HomePage: React.FC = () => {
             <div className="relative h-64 overflow-hidden">
               <img src={category.image} alt={category.name} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
-              <div className="absolute top-4 right-4 bg-red-500 text-white px-4 py-2 rounded-full font-bold text-sm">
+              {/* <div className="absolute top-4 right-4 bg-red-500 text-white px-4 py-2 rounded-full font-bold text-sm">
                 {category.discount} OFF
-              </div>
+              </div> */}
               <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
                 <h3 className="text-2xl font-bold mb-2">{category.name}</h3>
                 <div className="flex items-center justify-between">
