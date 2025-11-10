@@ -5,6 +5,7 @@ import Button from '../components/common/Button';
 import { useForm } from 'react-hook-form';
 import { sponsorService } from '../services';
 import toast from 'react-hot-toast';
+import Businessman from "../assets/african-american-business-man-suit.jpg"
 interface SponsorshipTier {
   id: string;
   name: string;
@@ -183,7 +184,7 @@ const SponsorsPage: React.FC = () => {
             duration: 0.6,
             delay: 0.2
           }} className="hidden lg:block">
-              <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=800" alt="Partnership" className="rounded-3xl shadow-2xl w-full" />
+              <img src={Businessman} alt="Partnership" className="rounded-3xl shadow-2xl w-full" />
             </motion.div>
           </div>
         </div>
@@ -324,32 +325,10 @@ const SponsorsPage: React.FC = () => {
         }} viewport={{
           once: true
         }} className="text-center mb-16">
-            <h2 className="heading-2 mb-4">What Our Sponsors Say</h2>
+          
           </motion.div>
 
-          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            {testimonials.map((testimonial, index) => <motion.div key={index} initial={{
-            opacity: 0,
-            y: 20
-          }} whileInView={{
-            opacity: 1,
-            y: 0
-          }} viewport={{
-            once: true
-          }} transition={{
-            delay: index * 0.1
-          }} className="card p-8">
-                <div className="flex items-center gap-4 mb-6">
-                  <img src={testimonial.image} alt={testimonial.name} className="w-16 h-16 rounded-full object-cover" />
-                  <div>
-                    <h3 className="font-bold text-lg">{testimonial.name}</h3>
-                    <p className="text-sm text-gray-600">{testimonial.position}</p>
-                    <p className="text-sm font-semibold text-purple-600">{testimonial.company}</p>
-                  </div>
-                </div>
-                <p className="text-gray-600 italic">"{testimonial.quote}"</p>
-              </motion.div>)}
-          </div>
+         
         </div>
       </section>
 
@@ -389,7 +368,7 @@ const SponsorsPage: React.FC = () => {
         }} viewport={{
           once: true
         }}>
-            <h2 className="heading-2 mb-6">Ready to Make an Impact?</h2>
+            <h2 className="heading-2 mb-6">Ready to Make a Rewarding Impact?</h2>
             <p className="text-xl mb-8 max-w-2xl mx-auto">
               Partner with IMF and reach millions while supporting MSMEs and the local economy.
             </p>

@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, useInView, useAnimation } from 'framer-motion';
-import { ShoppingBag, Store, TrendingDown, Users, Gift, Award, ArrowRight, CheckCircle, MapPin, Calendar, DollarSign, Target, Zap, Heart, Sparkles, Star, TrendingUp, Package, Phone, Building, Mail } from 'lucide-react';
+import { ShoppingBag, Store, TrendingDown, Users, Gift, Award, ArrowRight, CheckCircle, MapPin, Calendar, DollarSign, Target, Zap, Heart, Sparkles, Star, TrendingUp, Package, Phone, Building, Mail, Briefcase, Trophy, Shirt, Candy } from 'lucide-react';
 import Button from '../components/common/Button';
+
 const HomePage: React.FC = () => {
   const [timeLeft, setTimeLeft] = useState({
     days: 0,
@@ -10,6 +11,7 @@ const HomePage: React.FC = () => {
     minutes: 0,
     seconds: 0
   });
+
   useEffect(() => {
     const eventDate = new Date('2025-12-16T09:00:00').getTime();
     const updateCountdown = () => {
@@ -28,6 +30,7 @@ const HomePage: React.FC = () => {
     const interval = setInterval(updateCountdown, 1000);
     return () => clearInterval(interval);
   }, []);
+
   const heroStats = [{
     icon: Users,
     value: '100+',
@@ -45,6 +48,7 @@ const HomePage: React.FC = () => {
     value: '6 Days',
     label: 'of Opportunities'
   }];
+
   const whyPricesCrash = [{
     icon: Heart,
     title: 'Economic Relief',
@@ -66,6 +70,33 @@ const HomePage: React.FC = () => {
     description: 'Our partners and sponsors subsidize costs, enabling merchants to offer unbeatable prices you won\'t find anywhere else.',
     color: 'from-purple-500 to-purple-700'
   }];
+
+  const sideEvents = [{
+    icon: Briefcase,
+    title: 'MSMEs Business Clinic',
+    description: 'Representatives from CAC, SMEDAN, LSETF, investors, and financial institutions will sensitize and engage business owners on growth strategies and opportunities.',
+    color: 'from-blue-500 to-blue-700',
+    highlight: 'Free Business Consultation'
+  }, {
+    icon: Trophy,
+    title: 'Young Entrepreneurs Competition',
+    description: 'A platform for young business minds to showcase their innovations, pitch their ideas, and compete for prizes and investment opportunities.',
+    color: 'from-purple-500 to-purple-700',
+    highlight: 'Win Amazing Prizes'
+  }, {
+    icon: Shirt,
+    title: 'Fashion Show',
+    description: 'Experience the best of Nigerian fashion with stunning runway shows featuring local designers and their latest collections.',
+    color: 'from-pink-500 to-rose-600',
+    highlight: 'Local Fashion Spotlight'
+  }, {
+    icon: Candy,
+    title: 'Father Christmas for Children',
+    description: 'Bring your kids for a magical experience with Father Christmas! Free gifts, photos, and entertainment for the little ones.',
+    color: 'from-red-500 to-red-700',
+    highlight: 'Family Fun & Gifts'
+  }];
+
   const opportunities = [{
     title: 'FOR SHOPPERS',
     icon: ShoppingBag,
@@ -77,7 +108,7 @@ const HomePage: React.FC = () => {
     title: 'FOR MSME OWNERS',
     icon: Store,
     color: 'from-green-500 to-emerald-600',
-    benefits: ['Reach 10,000+ potential customers', 'Network with other business owners', 'Agencies & MSMEs Ecosystem experts.', 'Meet investors and secure funding', 'Get business mentorship from experts', 'Continue selling online after event'],
+    benefits: ['Reach 10,000+ potential customers', 'Network with other business owners', 'Agencies & MSMEs Ecosystem experts.', 'Meet investors and secure funding', 'Get business mentorship from experts', 'Continue selling online after event'],
     cta: 'Apply as Merchant',
     link: '/merchants'
   }, {
@@ -88,6 +119,7 @@ const HomePage: React.FC = () => {
     cta: 'Become a Sponsor',
     link: '/sponsors'
   }];
+
   const eventCategories = [{
     name: 'Fashion & Accessories',
     image: 'https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?w=600',
@@ -119,6 +151,7 @@ const HomePage: React.FC = () => {
     vendors: '20+',
     discount: 'Up to 50%'
   }];
+
   const impactStats = [{
     number: '500+',
     label: 'MSMEs Empowered Since 2022',
@@ -136,6 +169,7 @@ const HomePage: React.FC = () => {
     label: 'Merchant Satisfaction Rate',
     icon: Star
   }];
+
   const testimonials = [{
     name: 'Mrs. Blessing Adeyemi',
     role: 'Fashion Merchant',
@@ -158,9 +192,11 @@ const HomePage: React.FC = () => {
     sales: '₦650,000 + Investor deal',
     rating: 5
   }];
+
   const partners = ['Talent Plus Resources International', 'Ikorodu Local Government', 'Nigerian Export Promotion Council'];
+
   return <div className="min-h-screen">
-    { }
+    {/* Hero Section */}
     <section
       className="relative bg-green-900 text-white section-padding overflow-hidden min-h-[90vh] flex items-center"
       style={{
@@ -191,19 +227,6 @@ const HomePage: React.FC = () => {
           }} transition={{
             duration: 0.8
           }}>
-            {/* <motion.div initial={{
-              scale: 0.9,
-              opacity: 0
-            }} animate={{
-              scale: 1,
-              opacity: 1
-            }} transition={{
-              delay: 0.2
-            }} className="inline-flex items-center bg-yellow-400 text-green-900 px-6 py-3 rounded-full mb-6 font-bold shadow-lg">
-              <TrendingDown className="mr-2" size={24} />
-              PRICES ARE CRASHING!
-            </motion.div> */}
-
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-black mb-6 leading-tight">
               <span className="text-yellow-400">IKORODU</span>
               <br />
@@ -231,12 +254,12 @@ const HomePage: React.FC = () => {
                 <div>
                   <div className="text-sm text-green-200">Venue</div>
                   <div className="text-lg font-semibold">LIFE Theological Seminary Premises
-                    79, Obafemi Awolowo Road,Oke Ota-ona by Grammar Bus stop</div>
+                    79, Obafemi Awolowo Road,Oke Ota-ona by Grammar Bus stop</div>
                 </div>
               </div>
             </div>
 
-            { }
+            {/* Countdown Timer */}
             <div className="grid grid-cols-4 gap-4 mb-8">
               {[{
                 value: timeLeft.days,
@@ -260,21 +283,6 @@ const HomePage: React.FC = () => {
                 <div className="text-3xl md:text-4xl font-black">{item.value}</div>
                 <div className="text-xs md:text-sm font-bold">{item.label}</div>
               </motion.div>)}
-            </div>
-
-            <div className="flex flex-wrap gap-4">
-              <Link to="/register?role=customer">
-                <Button size="lg" className="bg-yellow-400 text-green-900 hover:bg-yellow-300 font-bold text-lg px-8">
-                  <Gift className="mr-2" size={24} />
-                  Get FREE Entry Pass
-                </Button>
-              </Link>
-              <Link to="/event">
-                <Button size="lg" className="border-2 border-white bg-transparent hover:bg-white/10 font-bold text-lg px-8">
-                  <Calendar className="mr-2" size={24} />
-                  View Full Schedule
-                </Button>
-              </Link>
             </div>
 
             <div className="mt-6 flex items-center gap-4 text-sm">
@@ -317,7 +325,7 @@ const HomePage: React.FC = () => {
           </motion.div>
         </div>
 
-        { }
+        {/* Hero Stats */}
         <motion.div initial={{
           opacity: 0,
           y: 50
@@ -337,7 +345,7 @@ const HomePage: React.FC = () => {
 
     </section>
 
-    { }
+    {/* Why Prices Crash Section */}
     <section className="section-padding bg-white">
       <div className="container-custom">
         <motion.div initial={{
@@ -388,8 +396,82 @@ const HomePage: React.FC = () => {
       </div>
     </section>
 
-    { }
-    <section className="section-padding bg-gradient-to-br from-gray-50 to-green-50">
+    {/* Side Events Section - NEW */}
+    <section className="section-padding bg-gradient-to-br from-green-50 via-yellow-50 to-green-50">
+      <div className="container-custom">
+        <motion.div initial={{
+          opacity: 0,
+          y: 30
+        }} whileInView={{
+          opacity: 1,
+          y: 0
+        }} viewport={{
+          once: true
+        }} className="text-center mb-16">
+          <div className="inline-flex items-center bg-yellow-400 text-green-900 px-6 py-2 rounded-full mb-4 font-bold">
+            <Sparkles className="mr-2" size={20} />
+            EXCITING SIDE EVENTS
+          </div>
+          <h2 className="heading-2 mb-4">
+            More Than Just <span className="text-green-600">Shopping</span>
+          </h2>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            Experience amazing activities and opportunities beyond the marketplace
+          </p>
+        </motion.div>
+
+        <div className="grid md:grid-cols-2 gap-8">
+          {sideEvents.map((event, index) => <motion.div key={index} initial={{
+            opacity: 0,
+            y: 30
+          }} whileInView={{
+            opacity: 1,
+            y: 0
+          }} viewport={{
+            once: true
+          }} transition={{
+            delay: index * 0.15
+          }} className="card p-8 hover:shadow-2xl transition-all duration-300 group relative overflow-hidden">
+            <div className="absolute top-4 right-4 bg-yellow-400 text-green-900 px-4 py-1 rounded-full text-xs font-bold">
+              {event.highlight}
+            </div>
+            <div className={`w-20 h-20 bg-gradient-to-br ${event.color} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform`}>
+              <event.icon className="text-white" size={36} />
+            </div>
+            <h3 className="text-2xl font-bold mb-4 text-gray-800">{event.title}</h3>
+            <p className="text-gray-600 leading-relaxed">{event.description}</p>
+          </motion.div>)}
+        </div>
+
+        <motion.div initial={{
+          opacity: 0,
+          y: 20
+        }} whileInView={{
+          opacity: 1,
+          y: 0
+        }} viewport={{
+          once: true
+        }} className="text-center mt-12">
+          <div className="bg-white rounded-2xl p-8 shadow-lg max-w-3xl mx-auto border-2 border-green-600">
+            <h3 className="text-2xl font-bold text-gray-800 mb-4">
+              Don't Miss Out on These Amazing Experiences!
+            </h3>
+            <p className="text-gray-600 mb-6">
+              All side events are included with your FREE entry pass. Bring your family and enjoy 6 days of shopping, learning, entertainment, and networking opportunities.
+            </p>
+            <Link to="/register?role=customer">
+              <Button size="lg" className="bg-green-600 hover:bg-green-700">
+                <Gift className="mr-2" size={20} />
+                Register for FREE Now
+              </Button>
+            </Link>
+          </div>
+        </motion.div>
+      </div>
+    </section>
+
+    {/* Opportunities Section */}
+    <section className="section-padding bg-white">
       <div className="container-custom">
         <motion.div initial={{
           opacity: 0,
@@ -441,8 +523,8 @@ const HomePage: React.FC = () => {
       </div>
     </section>
 
-    { }
-    <section className="section-padding bg-white">
+    {/* Product Categories Section */}
+    <section className="section-padding bg-gradient-to-br from-gray-50 to-green-50">
       <div className="container-custom">
         <motion.div initial={{
           opacity: 0,
@@ -472,9 +554,6 @@ const HomePage: React.FC = () => {
             <div className="relative h-64 overflow-hidden">
               <img src={category.image} alt={category.name} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
-              {/* <div className="absolute top-4 right-4 bg-red-500 text-white px-4 py-2 rounded-full font-bold text-sm">
-                {category.discount} OFF
-              </div> */}
               <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
                 <h3 className="text-2xl font-bold mb-2">{category.name}</h3>
                 <div className="flex items-center justify-between">
@@ -505,7 +584,7 @@ const HomePage: React.FC = () => {
       </div>
     </section>
 
-    { }
+    {/* Impact Stats Section */}
     <section className="section-padding bg-gradient-to-r from-green-600 to-green-800 text-white">
       <div className="container-custom">
         <motion.div initial={{
@@ -543,55 +622,7 @@ const HomePage: React.FC = () => {
       </div>
     </section>
 
-    { }
-    {/* <section className="section-padding bg-white">
-        <div className="container-custom">
-          <motion.div initial={{
-          opacity: 0,
-          y: 30
-        }} whileInView={{
-          opacity: 1,
-          y: 0
-        }} viewport={{
-          once: true
-        }} className="text-center mb-16">
-            <h2 className="heading-2 mb-4">Success Stories from Past Merchants</h2>
-            <p className="text-xl text-gray-600">Real merchants, real results</p>
-          </motion.div>
-
-          <div className="grid lg:grid-cols-3 gap-8">
-            {testimonials.map((testimonial, index) => <motion.div key={index} initial={{
-            opacity: 0,
-            y: 30
-          }} whileInView={{
-            opacity: 1,
-            y: 0
-          }} viewport={{
-            once: true
-          }} transition={{
-            delay: index * 0.2
-          }} className="card p-8">
-                <div className="flex items-center mb-6">
-                  <img src={testimonial.image} alt={testimonial.name} className="w-16 h-16 rounded-full object-cover mr-4" />
-                  <div className="flex-1">
-                    <h3 className="font-bold text-lg">{testimonial.name}</h3>
-                    <p className="text-sm text-gray-600">{testimonial.role}</p>
-                  </div>
-                  <div className="flex text-yellow-400">
-                    {[...Array(testimonial.rating)].map((_, i) => <Star key={i} size={16} fill="currentColor" />)}
-                  </div>
-                </div>
-                <p className="text-gray-700 italic mb-4">"{testimonial.quote}"</p>
-                <div className="bg-green-50 rounded-lg p-4 border-l-4 border-green-600">
-                  <div className="text-sm text-gray-600 mb-1">Total Sales:</div>
-                  <div className="text-xl font-bold text-green-700">{testimonial.sales}</div>
-                </div>
-              </motion.div>)}
-          </div>
-        </div>
-      </section> */}
-
-    { }
+    {/* Partners Section */}
     <section className="section-padding bg-gray-50">
       <div className="container-custom">
         <motion.div initial={{
@@ -624,7 +655,7 @@ const HomePage: React.FC = () => {
       </div>
     </section>
 
-    { }
+    {/* Final CTA Section */}
     <section className="section-padding bg-gradient-to-br from-green-700 via-green-800 to-green-900 text-white">
       <div className="container-custom text-center">
         <motion.div initial={{
@@ -677,4 +708,5 @@ const HomePage: React.FC = () => {
     </section>
   </div>;
 };
+
 export default HomePage;

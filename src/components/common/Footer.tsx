@@ -38,10 +38,7 @@ const Footer: React.FC = () => {
   const resources = [{
     label: 'About Us',
     path: '/about'
-  }, {
-    label: 'Event Details',
-    path: '/event'
-  }, {
+  },  {
     label: 'Exhibitors',
     path: '/exhibitors'
   }, {
