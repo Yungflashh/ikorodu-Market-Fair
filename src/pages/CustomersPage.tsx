@@ -6,6 +6,7 @@ import Button from '../components/common/Button';
 import { useForm } from 'react-hook-form';
 import { authService } from '../services/authService';
 import toast from 'react-hot-toast';
+
 const CustomersPage: React.FC = () => {
   const navigate = useNavigate();
   const [showRegistrationForm, setShowRegistrationForm] = useState(false);
@@ -17,30 +18,31 @@ const CustomersPage: React.FC = () => {
       errors
     }
   } = useForm();
+
   const benefits = [{
     icon: Percent,
-    title: '10-40% Exclusive Discounts',
+    title: '30-50% Exclusive Discounts',
     description: 'Save big with special prices available only at IMF',
     color: 'from-red-500 to-red-700'
   }, {
     icon: ShoppingBag,
-    title: '500+ Product Variety',
+    title: '100+ Product Variety',
     description: 'Fashion, food, beauty, tech, crafts, and more',
     color: 'from-blue-500 to-blue-700'
   }, {
     icon: Music,
     title: 'Live Entertainment',
-    description: 'Enjoy live music, performances, and activities',
+    description: 'Enjoy Father Christmas, fashion shows, and activities',
     color: 'from-purple-500 to-purple-700'
   }, {
     icon: Utensils,
     title: 'Food & Refreshments',
-    description: 'Delicious local and international cuisine',
+    description: 'Delicious local and international cuisine at food court',
     color: 'from-amber-500 to-amber-700'
   }, {
     icon: Gift,
-    title: 'Prizes & Giveaways',
-    description: 'Win amazing prizes through raffles and contests',
+    title: 'Daily Raffle Draws',
+    description: 'Win amazing prizes through daily raffles',
     color: 'from-green-500 to-green-700'
   }, {
     icon: Heart,
@@ -48,18 +50,19 @@ const CustomersPage: React.FC = () => {
     description: 'Help grow the Nigerian economy by buying local',
     color: 'from-pink-500 to-pink-700'
   }];
+
   const categories = [{
     name: 'Fashion & Clothing',
     icon: '👗',
-    count: '50+ Vendors'
+    count: '40+ Vendors'
   }, {
     name: 'Beauty & Cosmetics',
     icon: '💄',
-    count: '30+ Vendors'
+    count: '25+ Vendors'
   }, {
     name: 'Food & Beverages',
     icon: '🍔',
-    count: '40+ Vendors'
+    count: '35+ Vendors'
   }, {
     name: 'Technology & Gadgets',
     icon: '📱',
@@ -67,70 +70,116 @@ const CustomersPage: React.FC = () => {
   }, {
     name: 'Home & Lifestyle',
     icon: '🏠',
-    count: '35+ Vendors'
+    count: '30+ Vendors'
   }, {
     name: 'Arts & Crafts',
     icon: '🎨',
     count: '20+ Vendors'
   }];
+
   const schedule = [{
     day: 'Day 1',
-    date: 'TBA',
+    date: 'December 16, 2025',
     events: [{
       time: '9:00 AM',
-      event: 'Gates Open'
+      event: 'Opening Ceremony'
     }, {
-      time: '10:00 AM',
-      event: 'Official Opening Ceremony'
-    }, {
-      time: '11:00 AM - 6:00 PM',
+      time: '12:00 PM - 5:00 PM',
       event: 'Shopping & Exhibition'
     }, {
-      time: '2:00 PM',
-      event: 'Live Entertainment'
+      time: '2:00 PM - 5:00 PM',
+      event: 'Father Christmas for Children'
     }, {
-      time: '4:00 PM',
-      event: 'First Prize Giveaway'
+      time: '5:00 PM',
+      event: 'Gate Closes'
     }]
   }, {
     day: 'Day 2',
-    date: 'TBA',
+    date: 'December 17, 2025',
     events: [{
       time: '9:00 AM',
-      event: 'Gates Open'
+      event: 'Gate Opens'
     }, {
-      time: '10:00 AM - 6:00 PM',
+      time: '9:00 AM - 5:00 PM',
       event: 'Shopping & Exhibition'
     }, {
-      time: '12:00 PM',
-      event: 'Fashion Show'
+      time: '10:00 AM - 4:00 PM',
+      event: 'Father Christmas for Children'
+    }, {
+      time: '1:00 PM - 3:00 PM',
+      event: 'Young Entrepreneurs Competition'
     }, {
       time: '3:00 PM',
-      event: 'Cooking Demo'
+      event: 'Raffle Draw'
     }, {
       time: '5:00 PM',
-      event: 'Prize Giveaway'
+      event: 'Event Closes'
     }]
   }, {
     day: 'Day 3',
-    date: 'TBA',
+    date: 'December 18, 2025',
     events: [{
       time: '9:00 AM',
-      event: 'Gates Open'
+      event: 'Gate Opens'
     }, {
-      time: '10:00 AM - 6:00 PM',
+      time: '9:00 AM - 5:00 PM',
       event: 'Shopping & Exhibition'
     }, {
-      time: '1:00 PM',
-      event: 'Grand Prize Draw'
+      time: '10:00 AM - 4:00 PM',
+      event: 'Father Christmas for Children'
     }, {
-      time: '4:00 PM',
-      event: 'Closing Performance'
+      time: '12:00 PM - 2:00 PM',
+      event: 'MSMEs Business Clinic: Green Economy Focus'
     }, {
-      time: '6:00 PM',
+      time: '3:00 PM',
+      event: 'Raffle Draw'
+    }, {
+      time: '5:00 PM',
       event: 'Event Closes'
     }]
+  }, {
+    day: 'Day 4',
+    date: 'December 19, 2025',
+    events: [{
+      time: '9:00 AM',
+      event: 'Gate Opens'
+    }, {
+      time: '9:00 AM - 5:00 PM',
+      event: 'Shopping & Exhibition'
+    }, {
+      time: '10:00 AM - 4:00 PM',
+      event: 'Father Christmas for Children'
+    }, {
+      time: '2:00 PM',
+      event: 'Fashion Show'
+    }, {
+      time: '3:00 PM',
+      event: 'Raffle Draw'
+    }, {
+      time: '5:00 PM',
+      event: 'Event Closes'
+    }]
+  }, {
+    day: 'Day 5',
+    date: 'December 20, 2025',
+    events: [{
+      time: '9:00 AM',
+      event: 'Gate Opens'
+    }, {
+      time: '9:00 AM - 4:00 PM',
+      event: 'Shopping & Exhibition'
+    }, {
+      time: '10:00 AM - 3:00 PM',
+      event: 'Father Christmas for Children'
+    }, {
+      time: '4:00 PM',
+      event: 'Closing Ceremony'
+    }, {
+      time: '5:00 PM',
+      event: 'End of Event'
+    }]
   }];
+
   const faqs = [{
     question: 'Is registration free?',
     answer: 'Yes! Pre-registration is completely free and gives you early access perks.'
@@ -139,14 +188,15 @@ const CustomersPage: React.FC = () => {
     answer: 'Just bring your QR code (sent via email), valid ID, and shopping bags!'
   }, {
     question: 'Are children allowed?',
-    answer: 'Yes, the event is family-friendly with activities for all ages.'
+    answer: 'Yes, the event is family-friendly with Father Christmas activities daily for children!'
   }, {
     question: 'Is there parking available?',
-    answer: 'Yes, ample parking space is available at the venue.'
+    answer: 'Yes, free parking is available at the venue.'
   }, {
     question: 'What payment methods are accepted?',
     answer: 'Cash, bank transfers, and POS payments are accepted by vendors.'
   }];
+
   const onSubmit = async (data: any) => {
     setIsSubmitting(true);
     try {
@@ -164,9 +214,10 @@ const CustomersPage: React.FC = () => {
       setIsSubmitting(false);
     }
   };
+
   return <div className="min-h-screen">
-      {}
-      <section className="relative bg-gradient-to-br from-blue-600 via-blue-700 to-blue-900 text-white section-padding overflow-hidden">
+      {/* Hero Section */}
+      <section className="relative bg-gradient-to-br from-green-600 via-green-700 to-green-900 text-white section-padding overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute inset-0" style={{
           backgroundImage: 'repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(255,255,255,.1) 35px, rgba(255,255,255,.1) 70px)'
@@ -185,13 +236,13 @@ const CustomersPage: React.FC = () => {
             duration: 0.6
           }}>
               <div className="inline-block bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full mb-6">
-                <span className="text-sm font-semibold">🎉 3 Days of Amazing Deals</span>
+                <span className="text-sm font-semibold">🎉 5 Days of Amazing Deals</span>
               </div>
               <h1 className="heading-1 mb-6">
                 Shop, Save & Celebrate at Ikorodu Market Fair
               </h1>
               <p className="text-xl text-white/90 mb-8">
-                Discover incredible products from 200+ local businesses with exclusive discounts up to 40% off. Entertainment, food, and prizes await!
+                Discover incredible products from 100+ local businesses with exclusive discounts up to 50% off. Entertainment, food, and prizes await!
               </p>
 
               <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 mb-8">
@@ -209,16 +260,16 @@ const CustomersPage: React.FC = () => {
 
               <div className="grid grid-cols-3 gap-4">
                 <div className="text-center">
-                  <div className="text-3xl font-bold">200+</div>
-                  <div className="text-sm text-white/80">Vendors</div>
+                  <div className="text-3xl font-bold">100+</div>
+                  <div className="text-sm text-white/80">Exhibitors</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-3xl font-bold">40%</div>
+                  <div className="text-3xl font-bold">50%</div>
                   <div className="text-sm text-white/80">Max Discount</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-3xl font-bold">3</div>
-                  <div className="text-sm text-white/80">Days</div>
+                  <div className="text-3xl font-bold">15K+</div>
+                  <div className="text-sm text-white/80">Expected Shoppers</div>
                 </div>
               </div>
             </motion.div>
@@ -239,7 +290,7 @@ const CustomersPage: React.FC = () => {
         </div>
       </section>
 
-      {}
+      {/* Benefits Section */}
       <section className="section-padding bg-white">
         <div className="container-custom">
           <motion.div initial={{
@@ -279,7 +330,7 @@ const CustomersPage: React.FC = () => {
         </div>
       </section>
 
-      {}
+      {/* Categories Section */}
       <section className="section-padding bg-gray-50">
         <div className="container-custom">
           <motion.div initial={{
@@ -311,13 +362,13 @@ const CustomersPage: React.FC = () => {
           }} className="card p-6 text-center hover:shadow-xl transition-all cursor-pointer">
                 <div className="text-5xl mb-4">{category.icon}</div>
                 <h3 className="text-xl font-bold mb-2">{category.name}</h3>
-                <p className="text-primary-600 font-semibold">{category.count}</p>
+                <p className="text-green-600 font-semibold">{category.count}</p>
               </motion.div>)}
           </div>
         </div>
       </section>
 
-      {}
+      {/* Schedule Section */}
       <section className="section-padding bg-white">
         <div className="container-custom">
           <motion.div initial={{
@@ -329,13 +380,13 @@ const CustomersPage: React.FC = () => {
         }} viewport={{
           once: true
         }} className="text-center mb-16">
-            <h2 className="heading-2 mb-4">Event Schedule</h2>
+            <h2 className="heading-2 mb-4">Daily Activities Schedule</h2>
             <p className="text-xl text-gray-600">
-              Plan your visit with our detailed schedule
+              Plan your visit with our detailed 5-day schedule
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {schedule.map((day, index) => <motion.div key={index} initial={{
             opacity: 0,
             y: 20
@@ -347,14 +398,14 @@ const CustomersPage: React.FC = () => {
           }} transition={{
             delay: index * 0.1
           }} className="card p-6">
-                <div className="bg-primary-600 text-white rounded-lg p-4 mb-6 text-center">
+                <div className="bg-green-600 text-white rounded-lg p-4 mb-6 text-center">
                   <h3 className="text-2xl font-bold">{day.day}</h3>
                   <p className="text-sm">{day.date}</p>
                 </div>
 
-                <div className="space-y-4">
+                <div className="space-y-3">
                   {day.events.map((event, i) => <div key={i} className="flex items-start gap-3">
-                      <Clock className="text-primary-600 flex-shrink-0 mt-1" size={18} />
+                      <Clock className="text-green-600 flex-shrink-0 mt-1" size={18} />
                       <div>
                         <p className="font-semibold text-sm">{event.time}</p>
                         <p className="text-gray-600 text-sm">{event.event}</p>
@@ -366,8 +417,8 @@ const CustomersPage: React.FC = () => {
         </div>
       </section>
 
-      {}
-      <section className="section-padding bg-primary-50">
+      {/* Venue Section */}
+      <section className="section-padding bg-green-50">
         <div className="container-custom">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <motion.div initial={{
@@ -382,40 +433,38 @@ const CustomersPage: React.FC = () => {
               <h2 className="heading-2 mb-6">Venue Details</h2>
               <div className="space-y-6">
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-primary-600 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <div className="w-12 h-12 bg-green-600 rounded-lg flex items-center justify-center flex-shrink-0">
                     <MapPin className="text-white" size={24} />
                   </div>
                   <div>
                     <h3 className="font-bold text-lg mb-1">Location</h3>
-                    <p className="text-gray-600">Ikorodu Town Hall</p>
-                    <p className="text-gray-600">Ikorodu, Lagos State</p>
-                    <button className="text-primary-600 hover:underline mt-2">
-                      Get Directions →
-                    </button>
+                    <p className="text-gray-600">LIFE Theological Seminary Premises</p>
+                    <p className="text-gray-600">79, Obafemi Awolowo Road, Oke Ota-Ona</p>
+                    <p className="text-gray-600">By Grammar School, Ikorodu</p>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-primary-600 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <div className="w-12 h-12 bg-green-600 rounded-lg flex items-center justify-center flex-shrink-0">
                     <Clock className="text-white" size={24} />
                   </div>
                   <div>
                     <h3 className="font-bold text-lg mb-1">Opening Hours</h3>
-                    <p className="text-gray-600">Daily: 9:00 AM - 6:00 PM</p>
-                    <p className="text-gray-600">3-Day Event (Dates TBA)</p>
+                    <p className="text-gray-600">Daily: 9:00 AM - 5:00 PM</p>
+                    <p className="text-gray-600">5-Day Event: December 16-20, 2025</p>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-primary-600 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <div className="w-12 h-12 bg-green-600 rounded-lg flex items-center justify-center flex-shrink-0">
                     <Award className="text-white" size={24} />
                   </div>
                   <div>
                     <h3 className="font-bold text-lg mb-1">Facilities</h3>
                     <p className="text-gray-600">• Free parking available</p>
-                    <p className="text-gray-600">• Kids play area</p>
+                    <p className="text-gray-600">• Children play area</p>
                     <p className="text-gray-600">• Food court</p>
-                    <p className="text-gray-600">• Rest areas</p>
+                    <p className="text-gray-600">• Water & electricity</p>
                   </div>
                 </div>
               </div>
@@ -438,7 +487,7 @@ const CustomersPage: React.FC = () => {
         </div>
       </section>
 
-      {}
+      {/* FAQ Section */}
       <section className="section-padding bg-white">
         <div className="container-custom max-w-3xl">
           <motion.div initial={{
@@ -472,8 +521,8 @@ const CustomersPage: React.FC = () => {
         </div>
       </section>
 
-      {}
-      <section className="section-padding bg-gradient-to-r from-blue-600 to-blue-800 text-white">
+      {/* CTA Section */}
+      <section className="section-padding bg-gradient-to-r from-green-600 to-green-800 text-white">
         <div className="container-custom text-center">
           <motion.div initial={{
           opacity: 0,
@@ -499,7 +548,7 @@ const CustomersPage: React.FC = () => {
         </div>
       </section>
 
-      {}
+      {/* Registration Modal */}
       {showRegistrationForm && <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4">
           <motion.div initial={{
         opacity: 0,
@@ -507,9 +556,9 @@ const CustomersPage: React.FC = () => {
       }} animate={{
         opacity: 1,
         scale: 1
-      }} className="bg-white rounded-2xl max-w-md w-full p-8">
+      }} className="bg-white rounded-2xl max-w-md w-full p-8 max-h-[90vh] overflow-y-auto">
             <div className="text-center mb-6">
-              <QrCode className="mx-auto text-primary-600 mb-4" size={48} />
+              <QrCode className="mx-auto text-green-600 mb-4" size={48} />
               <h2 className="text-2xl font-bold mb-2">Free Customer Registration</h2>
               <p className="text-gray-600">Get your QR code for fast entry</p>
             </div>
@@ -568,4 +617,5 @@ const CustomersPage: React.FC = () => {
         </div>}
     </div>;
 };
+
 export default CustomersPage;

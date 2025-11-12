@@ -54,20 +54,12 @@ const Footer: React.FC = () => {
   }];
   const socialLinks = [{
     icon: Facebook,
-    href: '#',
+    href: 'https://www.facebook.com/share/1AbxYgBFQH/',
     label: 'Facebook'
   }, {
-    icon: Twitter,
-    href: '#',
-    label: 'Twitter'
-  }, {
     icon: Instagram,
-    href: '#',
+    href: 'https://www.instagram.com/talentplusresources?igsh=MWxlb2FlOXZrNnBoZA==',
     label: 'Instagram'
-  }, {
-    icon: Linkedin,
-    href: '#',
-    label: 'LinkedIn'
   }];
   return <footer className="bg-gray-900 text-white">
       <div className="container-custom py-12">

@@ -4,6 +4,12 @@ import { motion, useInView, useAnimation } from 'framer-motion';
 import { ShoppingBag, Store, TrendingDown, Users, Gift, Award, ArrowRight, CheckCircle, MapPin, Calendar, DollarSign, Target, Zap, Heart, Sparkles, Star, TrendingUp, Package, Phone, Building, Mail, Briefcase, Trophy, Shirt, Candy } from 'lucide-react';
 import Button from '../components/common/Button';
 
+// Import your partner logos
+import talentPlusLogo from '../assets/talentPlus.png';
+import ikoroduLGLogo from '../assets/seed.jpg';
+import nepcLogo from '../assets/group.png';
+// import nepcLogo2 from '../assets/african-american-business-man-suit.jpg';
+
 const HomePage: React.FC = () => {
   const [timeLeft, setTimeLeft] = useState({
     days: 0,
@@ -37,7 +43,7 @@ const HomePage: React.FC = () => {
     label: 'MSMEs Exhibiting'
   }, {
     icon: ShoppingBag,
-    value: '10,000+',
+    value: '15,000+',
     label: 'Expected Visitors'
   }, {
     icon: TrendingDown,
@@ -45,7 +51,7 @@ const HomePage: React.FC = () => {
     label: 'Price Crashes'
   }, {
     icon: Calendar,
-    value: '6 Days',
+    value: '5 Days',
     label: 'of Opportunities'
   }];
 
@@ -193,7 +199,20 @@ const HomePage: React.FC = () => {
     rating: 5
   }];
 
-  const partners = ['Talent Plus Resources International', 'Ikorodu Local Government', 'Nigerian Export Promotion Council'];
+  const partners = [
+    {
+      name: 'Talent Plus Resources International',
+      logo: talentPlusLogo
+    },
+    {
+      name: 'Ikorodu Local Government',
+      logo: ikoroduLGLogo
+    },
+    {
+      name: 'Nigerian Export Promotion Council',
+      logo: nepcLogo
+    }
+  ];
 
   return <div className="min-h-screen">
     {/* Hero Section */}
@@ -648,8 +667,12 @@ const HomePage: React.FC = () => {
             once: true
           }} transition={{
             delay: index * 0.1
-          }} className="bg-white px-8 py-6 rounded-lg shadow-sm hover:shadow-md transition-shadow font-bold text-gray-700 text-center">
-            {partner}
+          }} className="bg-white px-8 py-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+            <img 
+              src={partner.logo} 
+              alt={partner.name}
+              className="h-16 md:h-20 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300"
+            />
           </motion.div>)}
         </div>
       </div>

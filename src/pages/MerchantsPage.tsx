@@ -165,9 +165,9 @@ const MerchantsPage: React.FC = () => {
               <Button size="lg" onClick={() => setShowApplicationForm(true)} className="bg-secondary text-primary-700 hover:bg-gray-100">
                 Apply Now <ArrowRight className="ml-2" size={20} />
               </Button>
-              <Button size="lg" variant="primary" className="border-2 border-white bg-transparent hover:bg-white/10">
+              {/* <Button size="lg" variant="primary" className="border-2 border-white bg-transparent hover:bg-white/10">
                 Download Brochure
-              </Button>
+              </Button> */}
             </div>
 
             { }

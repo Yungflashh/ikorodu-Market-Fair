@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { TrendingUp, Users, Megaphone, Award, Target, BarChart, Briefcase, CheckCircle, Star, Trophy, Zap } from 'lucide-react';
+import { TrendingUp, Users, Megaphone, Award, Target, BarChart, Briefcase, CheckCircle, Star, Trophy, Zap, Calendar, ShoppingBag, Network, DollarSign, Tv, Gift } from 'lucide-react';
 import Button from '../components/common/Button';
 import { useForm } from 'react-hook-form';
 import { sponsorService } from '../services';
@@ -77,6 +77,35 @@ const SponsorsPage: React.FC = () => {
     title: 'Measurable ROI',
     description: 'Receive detailed analytics and impact reports showing your sponsorship value.'
   }];
+
+  const fairOfferings = [
+    {
+      icon: ShoppingBag,
+      title: 'Exhibition Stands',
+      description: 'Showcasing products and services exhibition - B2B and B2C. Product visibility and market expansion. Shoppers having access to variety of products to buy. Sales galore for vendors.'
+    },
+    {
+      icon: Network,
+      title: 'Networking Sessions',
+      description: 'Market synergy - Linking MSMEs with potential partners, buyers, and BDSPs fostering commerce collaboration. Vendors have Access to finance and Access to market.'
+    },
+    {
+      icon: Tv,
+      title: 'Media Visibility',
+      description: 'Promotion and showcase of products to extended consumers across the state and at the global stage using hashtags through the fair website and social media handle, attracting global audience through virtual streaming and news mention.'
+    },
+    {
+      icon: Award,
+      title: 'Award/Recognition',
+      description: 'Celebrating outstanding entrepreneurs and innovative ideas during the fair.'
+    },
+    {
+      icon: Gift,
+      title: 'Side Attractions',
+      description: 'MSMEs Business clinic, Young entrepreneurs\' competition, Fashion show and Father Christmas for children participation.'
+    }
+  ];
+
   const stats = [{
     value: '5M+',
     label: 'Media Reach'
@@ -134,7 +163,7 @@ const SponsorsPage: React.FC = () => {
     }
   };
   return <div className="min-h-screen">
-      {}
+      {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-purple-600 via-purple-700 to-purple-900 text-white section-padding overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute inset-0" style={{
@@ -161,16 +190,15 @@ const SponsorsPage: React.FC = () => {
                 Partner With Nigeria's Premier Market Fair
               </h1>
               <p className="text-xl text-white/90 mb-8">
-                Maximize brand visibility, demonstrate CSR impact, and connect with thousands of potential customers through strategic sponsorship.
+                Partner with us for maximum brand visibility, demonstrate CSR impact, Connect with thousands of potential customers through strategic sponsorship. Cash, bank transfers and POS Payments are accepted by vendors.
               </p>
               <div className="flex flex-wrap gap-4">
                 <Button size="lg" onClick={() => setShowInquiryForm(true)} className="border-2 border-white bg-transparent hover:bg-white/10">
-                  {}
                   Become a Sponsor
                 </Button>
-                <Button size="lg" className="border-2 border-white bg-transparent hover:bg-white/10">
+                {/* <Button size="lg" className="border-2 border-white bg-transparent hover:bg-white/10">
                   Download Sponsorship Deck
-                </Button>
+                </Button> */}
               </div>
             </motion.div>
 
@@ -190,7 +218,7 @@ const SponsorsPage: React.FC = () => {
         </div>
       </section>
 
-      {}
+      {/* Stats Section */}
       <section className="bg-purple-100 py-12">
         <div className="container-custom">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
@@ -212,8 +240,48 @@ const SponsorsPage: React.FC = () => {
         </div>
       </section>
 
-      {}
+      {/* Partnership Offering - 5 Days Fair Section */}
       <section className="section-padding bg-white">
+        <div className="container-custom">
+          <motion.div initial={{
+          opacity: 0,
+          y: 20
+        }} whileInView={{
+          opacity: 1,
+          y: 0
+        }} viewport={{
+          once: true
+        }} className="text-center mb-16">
+            <h2 className="heading-2 mb-4">Partnership Offering</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              IKORODU MARKET FAIR - 5 DAYS OFFERING
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {fairOfferings.map((offering, index) => <motion.div key={index} initial={{
+            opacity: 0,
+            y: 20
+          }} whileInView={{
+            opacity: 1,
+            y: 0
+          }} viewport={{
+            once: true
+          }} transition={{
+            delay: index * 0.1
+          }} className="card p-6 hover:shadow-xl transition-all">
+                <div className="w-14 h-14 bg-gradient-to-br from-purple-500 to-purple-700 rounded-xl flex items-center justify-center mb-4">
+                  <offering.icon className="text-white" size={28} />
+                </div>
+                <h3 className="text-xl font-bold mb-3">{offering.title}</h3>
+                <p className="text-gray-600">{offering.description}</p>
+              </motion.div>)}
+          </div>
+        </div>
+      </section>
+
+      {/* Why Sponsor Section */}
+      <section className="section-padding bg-gray-50">
         <div className="container-custom">
           <motion.div initial={{
           opacity: 0,
@@ -252,8 +320,8 @@ const SponsorsPage: React.FC = () => {
         </div>
       </section>
 
-      {}
-      <section className="section-padding bg-gray-50">
+      {/* Sponsorship Packages */}
+      <section className="section-padding bg-white">
         <div className="container-custom">
           <motion.div initial={{
           opacity: 0,
@@ -313,8 +381,8 @@ const SponsorsPage: React.FC = () => {
         </div>
       </section>
 
-      {}
-      <section className="section-padding bg-white">
+      {/* Testimonials Section removed but keeping empty section for structure */}
+      <section className="section-padding bg-gray-50">
         <div className="container-custom">
           <motion.div initial={{
           opacity: 0,
@@ -332,8 +400,8 @@ const SponsorsPage: React.FC = () => {
         </div>
       </section>
 
-      {}
-      {/* <section className="section-padding bg-gray-50">
+      {/* Our Team Section */}
+      <section className="section-padding bg-white">
         <div className="container-custom">
           <motion.div initial={{
           opacity: 0,
@@ -343,20 +411,141 @@ const SponsorsPage: React.FC = () => {
           y: 0
         }} viewport={{
           once: true
-        }} className="text-center mb-12">
-            <h2 className="heading-2 mb-4">Join Leading Brands</h2>
-            <p className="text-gray-600">Trusted partners who've sponsored IMF</p>
+        }} className="text-center mb-16">
+            <h2 className="heading-2 mb-4">Our Team</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Dedicated staff and Board of TalentPlus Resources International
+            </p>
           </motion.div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {pastSponsors.map((sponsor, index) => <div key={index} className="flex items-center justify-center p-6 bg-white rounded-lg grayscale hover:grayscale-0 transition-all">
-                <img src={sponsor.logo} alt={sponsor.name} className="max-h-12" />
-              </div>)}
+          <div className="max-w-4xl mx-auto">
+            <motion.div initial={{
+            opacity: 0,
+            y: 20
+          }} whileInView={{
+            opacity: 1,
+            y: 0
+          }} viewport={{
+            once: true
+          }} className="card p-8">
+              <h3 className="text-2xl font-bold mb-6 text-center text-purple-800">Contact Information</h3>
+              
+              <div className="grid md:grid-cols-2 gap-8">
+                <div>
+                  <h4 className="font-semibold text-lg mb-3 flex items-center gap-2">
+                    <Target className="text-purple-600" size={20} />
+                    Office Address
+                  </h4>
+                  <p className="text-gray-700 leading-relaxed">
+                    No. 6 Morayo Benson Street<br />
+                    Agbele community<br />
+                    Ikorodu, Lagos
+                  </p>
+                </div>
+
+                <div>
+                  <h4 className="font-semibold text-lg mb-3 flex items-center gap-2">
+                    <Megaphone className="text-purple-600" size={20} />
+                    Get In Touch
+                  </h4>
+                  <div className="space-y-2 text-gray-700">
+                    <p>
+                      <span className="font-medium">Email:</span><br />
+                      <a href="mailto:talentplusngr@gmail.com" className="text-purple-600 hover:underline">
+                        talentplusngr@gmail.com
+                      </a>
+                    </p>
+                    <p>
+                      <span className="font-medium">Phone:</span><br />
+                      <a href="tel:+2348026654545" className="hover:text-purple-600">+234 (0)802 665 4545</a><br />
+                      <a href="tel:+2349044514417" className="hover:text-purple-600">+234 (0)904 451 4417</a><br />
+                      <a href="tel:+2348139250638" className="hover:text-purple-600">+234 (0)813 925 0638</a>
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="mt-8 pt-8 border-t">
+                <h4 className="font-semibold text-lg mb-4 flex items-center gap-2 justify-center">
+                  <Users className="text-purple-600" size={20} />
+                  Connect With Us
+                </h4>
+                <div className="flex flex-wrap justify-center gap-6">
+                  <a href="https://www.facebook.com/share/1AbxYgBFQH/" className="flex items-center gap-2 text-gray-700 hover:text-purple-600 transition-colors">
+                    <div className="w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center">
+                      <span className="font-bold text-purple-600">f</span>
+                    </div>
+                    <span>Facebook</span>
+                  </a>
+                  <a href="https://www.instagram.com/talentplusresources?igsh=MWxlb2FlOXZrNnBoZA==" className="flex items-center gap-2 text-gray-700 hover:text-purple-600 transition-colors">
+                    <div className="w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center">
+                      <span className="font-bold text-purple-600">📷</span>
+                    </div>
+                    <span>Instagram</span>
+                  </a>
+                  <a href="https://x.com/talentplusng" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-gray-700 hover:text-purple-600 transition-colors">
+                    <div className="w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center">
+                      <span className="font-bold text-purple-600">𝕏</span>
+                    </div>
+                    <span>@talentplusng</span>
+                  </a>
+                </div>
+              </div>
+            </motion.div>
           </div>
         </div>
-      </section> */}
+      </section>
 
-      {}
+      {/* Payment Information Section */}
+      <section className="section-padding bg-gray-50">
+        <div className="container-custom">
+          <motion.div initial={{
+          opacity: 0,
+          y: 20
+        }} whileInView={{
+          opacity: 1,
+          y: 0
+        }} viewport={{
+          once: true
+        }} className="max-w-3xl mx-auto">
+            <div className="card p-8 bg-gradient-to-br from-purple-50 to-white border-2 border-purple-200">
+              <div className="text-center mb-6">
+                <div className="inline-flex items-center justify-center w-16 h-16 bg-purple-600 rounded-full mb-4">
+                  <DollarSign className="text-white" size={32} />
+                </div>
+                <h3 className="text-2xl font-bold text-purple-800 mb-2">Anonymous Payment Option</h3>
+                <p className="text-gray-600">For those willing to pay anonymously</p>
+              </div>
+
+              <div className="bg-white rounded-xl p-6 shadow-sm border border-purple-100">
+                <h4 className="font-semibold text-lg mb-4 text-gray-800">Organization Account Details</h4>
+                <div className="space-y-3">
+                  <div className="flex items-start gap-3">
+                    <div className="w-32 text-gray-600 font-medium">Account Name:</div>
+                    <div className="flex-1 font-semibold text-gray-800">TalentPlus Resources International</div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <div className="w-32 text-gray-600 font-medium">Account Number:</div>
+                    <div className="flex-1 font-bold text-purple-600 text-xl">1382007426</div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <div className="w-32 text-gray-600 font-medium">Bank:</div>
+                    <div className="flex-1 font-semibold text-gray-800">EcoBank Plc</div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="mt-6 p-4 bg-purple-100 rounded-lg">
+                <p className="text-sm text-gray-700 text-center">
+                  💡 After making your payment, please contact us to confirm your sponsorship tier and benefits.
+                </p>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
       <section className="section-padding bg-gradient-to-r from-purple-600 to-purple-800 text-white">
         <div className="container-custom text-center">
           <motion.div initial={{
@@ -376,18 +565,18 @@ const SponsorsPage: React.FC = () => {
               <Button size="lg" onClick={() => setShowInquiryForm(true)} className="border-2 border-white bg-transparent hover:bg-white/10">
                 Submit Sponsorship Inquiry
               </Button>
-              <Button size="lg" className="border-2 border-white bg-transparent hover:bg-white/10">
+              {/* <Button size="lg" className="border-2 border-white bg-transparent hover:bg-white/10">
                 Schedule a Call
-              </Button>
+              </Button> */}
             </div>
             <p className="mt-6 text-white/80">
-              Questions? Contact our partnerships team: partnerships@imf.com | +234 XXX XXX XXXX
+              Questions? Contact our partnerships team: talentplusngr@gmail.com | +234 (0)802 665 4545
             </p>
           </motion.div>
         </div>
       </section>
 
-      {}
+      {/* Inquiry Form Modal */}
       {showInquiryForm && <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4 overflow-y-auto">
           <motion.div initial={{
         opacity: 0,

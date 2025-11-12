@@ -36,12 +36,7 @@ const DashboardPage: React.FC = () => {
     label: 'Upcoming Events',
     value: '1',
     color: 'from-purple-500 to-purple-700'
-  }, {
-    icon: TrendingUp,
-    label: 'Total Reach',
-    value: '15K+',
-    color: 'from-orange-500 to-orange-700'
-  }];
+  }, ];
   return <div className="min-h-screen bg-gray-50">
       {}
       <div className="bg-white border-b">
@@ -51,14 +46,14 @@ const DashboardPage: React.FC = () => {
               <h1 className="text-2xl font-bold">Dashboard</h1>
               <p className="text-gray-600">Welcome back, {user?.name}!</p>
             </div>
-            <div className="flex gap-4">
+            {/* <div className="flex gap-4">
               <Button variant="outline" size="sm">
                 <Bell size={20} />
               </Button>
               <Button variant="outline" size="sm">
                 <Settings size={20} />
               </Button>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
